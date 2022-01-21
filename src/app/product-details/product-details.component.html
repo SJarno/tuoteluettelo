@@ -1,0 +1,61 @@
+<section class="container">
+    <button (click)="goBack()">go back</button>
+    <div class="row">
+        <div class="col">
+            <img src="../assets/puhelinten-tuotetiedot/{{product.images[0]}}" alt="">
+        </div>
+        <div class="col">
+            <ul>
+                <li>
+                    <h2>{{product.name}}</h2>
+                    <hr>
+                </li>
+                <li>{{product.description}}</li>
+            </ul>
+            <!-- container for images -->
+            <div class="small-img-view">
+                <figure *ngFor="let img of product.images">
+                    <img src="../assets/puhelinten-tuotetiedot/{{img}}" alt="">
+                </figure>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <ul class="col">
+            <li><h5>Availability and network</h5></li>
+            <li><h6>Availability</h6></li>
+            <li *ngFor="let a of product.availability">{{a}}</li>
+            
+        </ul>
+        <ul class="col">
+            <li><h5>Battery</h5></li>
+            <li><h6>Type</h6></li>
+            <li>{{product.battery.type}}</li>
+            <li></li>
+            <li><h6>Talk Time</h6></li>
+            <li>{{product.battery.talkTime}}</li>
+            <li><h6>Standby time (max)</h6></li>
+            <li>{{product.battery.standbyTime}}</li>
+        </ul>
+        <ul class="col">
+            <li><h5>Storage and memory</h5></li>
+            <li><h6>RAM</h6></li>
+            <li>{{product.storage.ram}}</li>
+            <li><h6>Internal Storage</h6></li>
+            <li>{{product.storage.flash}}</li>
+        </ul>
+        <ul class="col">
+            <li><h5>Connectivity</h5></li>
+            <li><h6>Network support wifi</h6></li>
+            <li>{{product.connectivity.wifi}}</li>
+            <li><h6>Bluetooth</h6></li>
+            <li>{{product.connectivity.bluetooth}}</li>
+            <li><h6>Infrared</h6></li>
+            <li *ngIf="infrared; else crossFalse">&#x2713;</li>
+            <ng-template #crossFalse>&#x2717;</ng-template>
+            <li><h6>GPS</h6></li>
+            <li *ngIf="gps; else crossFalse">&#x2713;</li>
+        </ul>
+    </div>
+</section>

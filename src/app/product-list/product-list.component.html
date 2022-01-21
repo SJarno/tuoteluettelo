@@ -1,0 +1,41 @@
+<section class="row">
+    <h1>Luettelonäkymä</h1>
+  </section>
+  <section class="row">
+    <div class="col-3 search-sort">
+      <form>
+        <label for="search-prod">Search:</label>
+        <br>
+        <input type="search" [(ngModel)]="name" name="name">
+      </form>
+      <form>
+        <label for="sort-prod">Sort by:</label>
+        <br>
+        <select id="selectid" (change)="sort($event)">
+          <option value="newest">Newest</option>
+          <option value="alphabetical">Alphabetical</option>
+       </select>
+      </form>
+    </div>
+    <div class="col">
+      <ul>
+        <li *ngFor="let prod of products | FilterPipe : name">
+
+          <div class="product">
+            <img src='../assets/puhelinten-tuotetiedot/{{prod.imageUrl}}' alt="">
+
+            <ul>
+              <li>
+                <a routerLink="prod-details/{{prod.id}}">
+                  <h6>{{ prod.name }}</h6>
+                </a>
+              </li>
+              <li>
+                <p>{{ prod.snippet }}</p>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>

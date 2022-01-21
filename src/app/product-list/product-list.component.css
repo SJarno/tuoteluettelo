@@ -1,0 +1,22 @@
+.product {
+    width: 100%;
+    border: solid 0.05rem black;
+    border-radius: 0.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    
+}
+
+.product img {
+    width: 20%;
+}
+
+.product h6 {
+    color: rgb(18, 108, 150);
+}
+
+.search-sort > *{
+    margin-bottom: 1rem;
+}

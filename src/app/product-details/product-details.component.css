@@ -1,0 +1,15 @@
+.small-img-view {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.small-img-view >* {
+    flex-basis: 33%;
+}
+
+.small-img-view img {
+    width: 100%;
+    height: auto;
+}
